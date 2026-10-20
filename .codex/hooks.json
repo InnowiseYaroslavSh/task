@@ -1,0 +1,49 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/home/user/Yaroslav/Projects/SlopTraining/python-accelerator/.codex/hooks/file-naming-validator.sh'",
+            "timeout": 5000
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/home/user/Yaroslav/Projects/SlopTraining/python-accelerator/.codex/hooks/bash-validator.sh'",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/home/user/Yaroslav/Projects/SlopTraining/python-accelerator/.codex/hooks/loop-detection.sh'",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/home/user/Yaroslav/Projects/SlopTraining/python-accelerator/.codex/hooks/local-context.sh'",
+            "timeout": 10000
+          }
+        ]
+      }
+    ]
+  }
+}
